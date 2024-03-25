@@ -42,7 +42,6 @@ const std = @import("std");
 // Insects will be represented by either bees or ants. Bees store
 // the number of flowers they've visited that day and ants just
 // store whether or not they're still alive.
-//
 const Insect = union {
     flowers_visited: u16,
     still_alive: bool,
@@ -60,8 +59,8 @@ pub fn main() void {
     std.debug.print("Insect report! ", .{});
 
     // Oops! We've made a mistake here.
-    printInsect(ant, AntOrBee.a);
-    printInsect(bee, AntOrBee.b);
+    printInsect(ant, AntOrBee.c);
+    printInsect(bee, AntOrBee.c);
 
     std.debug.print("\n", .{});
 }

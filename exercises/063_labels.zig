@@ -1,7 +1,10 @@
 //
 // Loop bodies are blocks, which are also expressions. We've seen
 // how they can be used to evaluate and return values. To further
-// expand on this concept, it turns out we can also give names to blocks by applying a 'label': my_label: { ... }
+// expand on this concept, it turns out we can also give names to
+// blocks by applying a 'label':
+//
+//     my_label: { ... }
 //
 // Once you give a block a label, you can use 'break' to exit
 // from that block.
@@ -125,8 +128,8 @@ pub fn main() void {
         // wanted for this Food.
         //
         // Please return this Food from the loop.
-        break food;
-    } else menu[0];
+        break;
+    };
     // ^ Oops! We forgot to return Mac & Cheese as the default
     // Food when the requested ingredients aren't found.
 

@@ -87,7 +87,7 @@ pub fn main() void {
     // Let's assign the std.debug.print function to a const named
     // "print" so that we can use this new name later!
 
-    const print = std.debug.print;
+    const print = ???;
 
     // Now let's look at assigning and pointing to values in Zig.
     //
@@ -141,9 +141,20 @@ pub fn main() void {
     //
     // Moving along...
     //
-    // Passing arguments to functions is pretty much exactly like
-    // making an assignment to a const (since Zig enforces that ALL
-    // function parameters are const).
+    // When arguments are passed to a function,
+    // they are ALWAYS passed as constants within the function,
+    // regardless of how they were declared in the calling function.
+    //
+    // Example:
+    // fn foo(arg: u8) void {
+    //    arg = 42; // Error, 'arg' is const!
+    // }
+    //
+    // fn bar() void {
+    //    var arg: u8 = 12;
+    //    foo(arg);
+    //    ...
+    // }
     //
     // Knowing this, see if you can make levelUp() work as expected -
     // it should add the specified amount to the supplied character's
@@ -152,13 +163,13 @@ pub fn main() void {
     print("XP before:{}, ", .{glorp.experience});
 
     // Fix 1 of 2 goes here:
-    levelUp(&glorp, reward_xp);
+    levelUp(glorp, reward_xp);
 
     print("after:{}.\n", .{glorp.experience});
 }
 
 // Fix 2 of 2 goes here:
-fn levelUp(character_access: *Character, xp: u32) void {
+fn levelUp(character_access: Character, xp: u32) void {
     character_access.experience += xp;
 }
 

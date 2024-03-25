@@ -65,10 +65,10 @@ const std = @import("std");
 const Err = error{Cthulhu};
 
 pub fn main() void {
-    var first_line1: *const [16]u8 = undefined;
+    var first_line1: *const [16]u8 = ???;
     first_line1 = "That is not dead";
 
-    var first_line2: Err!*const [21]u8 = undefined;
+    var first_line2: Err!*const [21]u8 = ???;
     first_line2 = "which can eternal lie";
 
     // Note we need the "{!s}" format for the error union string.
@@ -77,8 +77,8 @@ pub fn main() void {
     printSecondLine();
 }
 
-fn printSecondLine() void {
-    var second_line2: ?*const [18]u8 = undefined;
+fn printSecondLine() ??? {
+    var second_line2: ?*const [18]u8 = ???;
     second_line2 = "even death may die";
 
     std.debug.print("And with strange aeons {s}.\n", .{second_line2.?});

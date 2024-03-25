@@ -18,7 +18,6 @@
 // See if you can re-write the last exercise using a continue
 // expression:
 //
-
 const std = @import("std");
 
 pub fn main() void {
@@ -26,7 +25,7 @@ pub fn main() void {
 
     // Please set the continue expression so that we get the desired
     // results in the print statement below.
-    while (n < 1000) : (n *= 2) {
+    while (n < 1000) : ??? {
         // Print the current number
         std.debug.print("{} ", .{n});
     }
